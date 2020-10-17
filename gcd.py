@@ -1,25 +1,22 @@
-# Uses python3
-import sys
-
-
-def gcd_naive(a, b):
-    current_gcd = 1
-    for d in range(2, min(a, b) + 1):
-        if a % d == 0 and b % d == 0:
-            if d > current_gcd:
-                current_gcd = d
-
-    return current_gcd
+# Greatest Common Divisor
+# Author: jerrybelmonte
+# Input: Two integers a and by seperated by a space.
+# Output: Greatest common divisor of a and b.
+# Implements the Euclidean algorithm for computing the
+# greatest common divisor.
 
 
 def gcd(a, b):
+    # left >= right, ensures descending numbers
     left, right = max(a, b), min(a, b)
-    if right == 0:
-        return left
-    left, right = right, left % right
-    return gcd(left, right)
+
+    if right == 0:  # base case
+        return left  # left is the greatest common divisor
+
+    # keep dividing until remainder is 0
+    return gcd(right, (left % right))
 
 
 if __name__ == "__main__":
-    a_val, b_val = input().split()
-    print(gcd(int(a_val), int(b_val)))
+    a, b = input().split()
+    print(gcd(int(a), int(b)))

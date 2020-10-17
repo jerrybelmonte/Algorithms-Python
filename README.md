@@ -7,6 +7,7 @@ Programming challenges and algorithm implementations in Python 3.
   - [Maximum Pairwise Product](#maximum-pairwise-product)
   - [Fibonacci Number](#fibonacci-number)
   - [Fibonacci Last Digit](#fibonacci-last-digit)
+  - [Greatest Common Divisor](#greatest-common-divisor)
 * [Greedy Algorithms](#greedy-algorithms)
 * [Divide and Conquer](#divide-and-conquer)
 * [Dynamic Programming](#dynamic-programming)
@@ -33,6 +34,12 @@ Given an integer n, find the last digit of the nth Fibonacci number Fn.
 **Input:** Single integer n (0 <= n <= 10E7).  
 **Output:** Last digit of Fn (where digit is Fn mod 10).  
 [Python Code](fibonacci_last_digit.py "fibonacci_last_digit.py")
+
+### Greatest Common Divisor
+Given two integers a and b, find their greatest common divisor.  
+**Input:** Two integers a and b seperated by a space (1 <= a, b <= 2*10E9).  
+**Output:** Greatest common divisor of a and b.  
+[Python Code](gcd.py "gcd.py")
 
 ## Greedy Algorithms
 
