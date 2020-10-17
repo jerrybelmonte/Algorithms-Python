@@ -6,6 +6,7 @@ Programming challenges and algorithm implementations in Python 3.
 * [Programming Challenges](#programming-challenges)
   - [Maximum Pairwise Product](#maximum-pairwise-product)
   - [Fibonacci Number](#fibonacci-number)
+  - [Fibonacci Last Digit](#fibonacci-last-digit)
 * [Greedy Algorithms](#greedy-algorithms)
 * [Divide and Conquer](#divide-and-conquer)
 * [Dynamic Programming](#dynamic-programming)
@@ -27,6 +28,11 @@ Given an integer n, find the nth Fibonacci number Fn.
 **Output:** nth Fibonacci number.  
 [Python Code](fibonacci.py "fibonacci.py")
 
+### Fibonacci Last Digit
+Given an integer n, find the last digit of the nth Fibonacci number Fn.  
+**Input:** Single integer n (0 <= n <= 10E7).  
+**Output:** Last digit of Fn (where digit is Fn mod 10).  
+[Python Code](fibonacci_last_digit.py "fibonacci_last_digit.py")
 
 ## Greedy Algorithms
 

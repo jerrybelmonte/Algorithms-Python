@@ -20,5 +20,6 @@ def get_fibonacci(n):
     return fibonacci_dict.get(str(n))
 
 
-n = int(input())
-print(get_fibonacci(n))
+if __name__ == '__main__':
+    n = int(input())
+    print(get_fibonacci(n))

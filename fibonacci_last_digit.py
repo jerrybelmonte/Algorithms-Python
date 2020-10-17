@@ -1,28 +1,27 @@
-# Uses python3
-def get_fibonacci_last_digit_naive(num):
-    if num <= 1:
-        return num
-
-    previous = 0
-    current = 1
-
-    for _ in range(num - 1):
-        previous, current = current, previous + current
-
-    return current % 10
+# Last Digit of a Large Fibonacci Number
+# Author: jerrybelmonte
+# Input: Single integer n.
+# Output: Last digit of Fn.
 
 
 def get_fibonacci_last_digit(num):
-    if num <= 1:
+    if num <= 1:  # base case
         return num
-    fib = {'0': 0, '1': 1}
+    
+    # implement a fibonacci lookup table for the last digit
+    fib_dict = {'0': 0, '1': 1}
+
+    # stores the last digit instead of the Fibonacci number
     for i in range(2, num + 1):
-        cur = str(i - 1)
-        prev = str(i - 2)
-        fib[str(i)] = (fib.get(cur) + fib.get(prev)) % 10
-    return fib.get(str(num))
+        cur = str(i - 1)  # current last digit in the Fibonacci sequence
+        prev = str(i - 2) # previous last digit in the Fibonacci sequence
+
+        # f[i] is the last digit of the sum of the last digits of
+        # f[i - 1] + f[i - 2], which has a better memory performance
+        fib_dict[str(i)] = (fib_dict.get(cur) + fib_dict.get(prev)) % 10
+
+    return fib_dict.get(str(num))
 
 
 if __name__ == '__main__':
-    n_ = int(input())
-    print(get_fibonacci_last_digit(n_))
+    print(get_fibonacci_last_digit(int(input())))
