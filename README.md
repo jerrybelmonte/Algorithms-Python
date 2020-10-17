@@ -41,6 +41,12 @@ Given two integers a and b, find their greatest common divisor.
 **Output:** Greatest common divisor of a and b.  
 [Python Code](gcd.py "gcd.py")
 
+### Least Common Multiple
+Given two integers a and b, find their least common multiple.  
+**Input:** Two integers a and b seperated by a space (1 <= a, b <= 2*10E7).  
+**Output:** Least common multiple of a and b.  
+[Python Code](lcm.py "lcm.py")
+
 ## Greedy Algorithms
 
 ## Divide and Conquer
