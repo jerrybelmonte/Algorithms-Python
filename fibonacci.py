@@ -1,18 +1,24 @@
-# Uses python3
-def calc_fib(n):
-    if n <= 1:
+# Fibonacci Number
+# Author: jerrybelmonte
+# Input: Single integer n.
+# Output: nth Fibonnaci number.
+
+
+def get_fibonacci(n):
+    if n <= 1:  # base case
         return n
 
-    def calc_fib_nums(num, m):
-        n_val = str(num)
-        if n_val in m:
-            return m.get(n_val)
-        m[n_val] = calc_fib_nums(num - 1, m) + calc_fib_nums(num - 2, m)
-        return m.get(n_val)
+    # implement a fibonnaci lookup table
+    fibonacci_dict = {'0': 0, '1': 1}
 
-    fib_nums = {'1': 1, '0': 0}
-    return calc_fib_nums(n, fib_nums)
+    # optimize memory space by using a for loop instead of recursion
+    for k in range(2, n+1):
+        fib_num = fibonacci_dict[str((k-1))] + fibonacci_dict[str((k-2))]
+        fibonacci_dict.setdefault(str(k), fib_num)
+    
+    # return the nth fibonnaci value from the dictionary
+    return fibonacci_dict.get(str(n))
 
 
 n = int(input())
-print(calc_fib(n))
+print(get_fibonacci(n))
