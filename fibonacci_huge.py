@@ -1,40 +1,58 @@
-# Uses python3
-def get_fibonacci_huge_naive(n, m):
-    if n <= 1:
+# Fibonacci Huge Number
+# Author: jerrybelmonte
+# Input: Two integers n and m separated by a space.
+# Output: Fn mod m
+# Note: For an integer m >= 2, the sequence Fn mod m is periodic.
+# It is a Pisano period that always starts with 01.
+
+
+def get_fibonacci_huge(n: int, m: int):
+    """
+    Gets the remainder of Fn when divided by m.
+
+    :param n: nth Fibonacci number
+    :param m: the divisor of Fn
+    :return: Fn mod m
+
+    Example 1:
+    >>>get_fibonacci_huge(239, 1000)
+    >>>161
+
+    Example 2:
+    >>>get_fibonacci_huge(2816213588, 239)
+    >>>151
+    """
+    if n <= 1:  # base case
         return n
-    previous = 0
-    current = 1
-    for _ in range(n - 1):
-        previous, current = current, previous + current
-    return current % m
 
-
-def get_fibonacci_huge(n, m):
-    if n <= 1:
-        return n
-
-    fib = {'0': 0, '1': 1}
+    fibonacci = {'0': 0, '1': 1}
     pisano = 3
+
     if m > 2:
-        i = 2
-        p = 0
-        c = 0
-        while (p, c) != (0, 1):
-            fib[str(i)] = (fib.get(str(i-1)) + fib.get(str(i-2)))
-            p = (fib.get(str(i-1)) % m)
-            c = (fib.get(str(i)) % m)
-            i += 1
-        pisano = i - 2
+        ndx = 2
+        previous = 0
+        current = 0
 
-    rem = str(n % pisano)
-    if rem not in fib:
-        for i in range(len(fib), rem + 1):
-            fib[str(i)] = (fib.get(str(i-1)) + fib.get(str(i-2)))
+        while (previous, current) != (0, 1):
+            fibonacci[str(ndx)] = (fibonacci.get(str(ndx - 1)) +
+                                   fibonacci.get(str(ndx - 2)))
 
-    fib_num = fib.get(rem)
-    return fib_num % m
+            previous = fibonacci.get(str(ndx - 1)) % m
+            current = fibonacci.get(str(ndx)) % m
+            ndx += 1
+
+        pisano = ndx - 2
+
+    remainder = str(n % pisano)
+
+    if remainder not in fibonacci:
+        for i in range(len(fibonacci), remainder + 1):
+            fibonacci[str(i)] = (fibonacci.get(str(i - 1)) +
+                                 fibonacci.get(str(i - 2)))
+
+    return fibonacci.get(remainder) % m
 
 
 if __name__ == '__main__':
-    n_, m_ = input().split()
-    print(get_fibonacci_huge(int(n_), int(m_)))
+    n, m = input().split()
+    print(get_fibonacci_huge(int(n), int(m)))
