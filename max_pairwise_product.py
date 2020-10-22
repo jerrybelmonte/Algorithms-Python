@@ -1,7 +1,7 @@
 # Maximum Pairwise Product
 # Author: jerrybelmonte
-# Input: First line contains an integer n (2 <= n <= 2*10E5). Second line
-# contains n non-negative integers (0 <= a1,...,an <= 2*10E5).
+# Input: First line contains an integer n. 
+# Second line contains n non-negative integers separated by spaces.
 # Output: Integer of the maximum pairwise product.
 
 
