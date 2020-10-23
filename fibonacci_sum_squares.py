@@ -13,13 +13,13 @@ def fibonacci_sum_squares(n: int):
 
     Example 1:
     0+1+1+4+9+25+64+169=273
-    >>>fibonacci_sum_squares(7)
-    >>>3
+    >>> fibonacci_sum_squares(7)
+    3
 
     Example 2:
     F73 = 1,052,478,208,141,359,608,061,842,155,201
-    >>>fibonacci_sum_squares(73)
-    >>>1
+    >>> fibonacci_sum_squares(73)
+    1
     """
     n %= 60
 
