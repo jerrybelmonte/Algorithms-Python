@@ -1,28 +1,78 @@
-# Uses python3
+# Maximum Salary
+# Author: jerrybelmonte
+# Input: First line contains an integer n.
+# Second line contains integers separated by a space.
+# Output: The largest number that can be composed out of a1,a2,...,an.
 import sys
 
 
-def greater_or_equal(d, m):
-    left, right = list(d), list(m)
-    for x in left:
-        j = 0
-        while j < len(right):
-            if x >= right[j]:
-                j += 1
-            else:
-                return False
-    return True
+def greater_or_equal(d: str, m: str):
+    """
+    Checks if the digit is greater or equal than the max digit.
+
+    :param d: the current digit
+    :param m: the max digit
+    :return: True if d >= m
+
+    >>> greater_or_equal('2', '21')
+    True
+
+    >>> greater_or_equal('21', '2')
+    False
+
+    >>> greater_or_equal('33', '3')
+    True
+
+    >>> greater_or_equal('3', '33')
+    True
+    """
+    digit_max, max_digit = d + m, m + d
+    left, right = int(digit_max), int(max_digit)
+    return left >= right
 
 
-def largest_number(digits):
+def largest_number(digits: list):
+    """
+    Composes the largest number out of a set of integers.
+
+    :param digits: the set of numbers
+    :return: the largest number that can be composed
+
+    >>> largest_number(['2', '3', '9'])
+    '932'
+
+    >>> largest_number(['21', '2'])
+    '221'
+
+    >>> largest_number(['2', '21'])
+    '221'
+
+    >>> largest_number(['9', '4', '6', '1', '9'])
+    '99641'
+
+    >>> largest_number(['9', '4', '6', '10', '9'])
+    '996410'
+
+    >>> largest_number(['23', '39', '92'])
+    '923923'
+
+    >>> largest_number(['6', '61', '68'])
+    '68661'
+
+    >>> largest_number(['4', '42', '46', '427', '465'])
+    '46546442742'
+
+    >>> largest_number(['5', '52', '57', '517', '532', '569', '581'])
+    '58157569553252517'
+    """
     res = ""
 
-    while len(digits) > 0:
-        max_digit = max(digits)
+    while digits:
+        max_digit = ''
 
-        for digit in digits:
-            if greater_or_equal(digit, max_digit):
-                max_digit = digit
+        for i in range(len(digits)):
+            if greater_or_equal(digits[i], max_digit):
+                max_digit = digits[i]
 
         res += max_digit
         digits.remove(max_digit)
@@ -31,17 +81,6 @@ def largest_number(digits):
 
 
 if __name__ == '__main__':
-    input_ = sys.stdin.read()
-    data = input_.split()
-    a_ = data[1:]
-    print(largest_number(a_))
-    # print('932 =', '932' == largest_number(['2', '3', '9']))
-    # print(largest_number(['21', '2']))
-    # print(largest_number(['2', '21']))
-    # print(largest_number(['9', '4', '6', '1', '9']))
-    # print(largest_number(['9', '4', '6', '10', '9']))
-    # print(largest_number(['23', '39', '92']))
-    # print(largest_number(['92', '39', '23']))
-    # print('68661 =', '68661' == largest_number(['6', '61', '68']))
-    # print('46546442742 =', largest_number(['4', '42', '46', '427', '465']))
-    # print('58157569553252517 =', '58157569553252517' == largest_number(['5', '52', '57', '517', '532', '569', '581']))
+    data = sys.stdin.read().split()
+    a = data[1:]
+    print(largest_number(a))
