@@ -15,7 +15,7 @@ Programming challenges and algorithm implementations in Python 3.
   - [Fibonacci Sum Of Squares Last Digit](#fibonacci-sum-of-squares-last-digit)
 * [Greedy Algorithms](#greedy-algorithms)
   - [Money Change](#money-change)
-  - [Fractional Knapsack](#fractinal-knapsack)
+  - [Fractional Knapsack](#fractional-knapsack)
   - [Car Fueling](#car-fueling)
   - [Maximum Dot Product](#maximum-dot-product)
   - [Covering Segments By Points](#covering-segments-by-points)
