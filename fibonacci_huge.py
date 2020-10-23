@@ -15,12 +15,12 @@ def get_fibonacci_huge(n: int, m: int):
     :return: Fn mod m
 
     Example 1:
-    >>>get_fibonacci_huge(239, 1000)
-    >>>161
+    >>> get_fibonacci_huge(239, 1000)
+    161
 
     Example 2:
-    >>>get_fibonacci_huge(2816213588, 239)
-    >>>151
+    >>> get_fibonacci_huge(2816213588, 239)
+    151
     """
     if n <= 1:  # base case
         return n

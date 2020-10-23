@@ -12,12 +12,12 @@ def fibonacci_sum_last_digit(n: int):
     :return: the last digit of the sum
 
     Example 1: F0 + F1 + F3 = 0 + 1 + 1 + 2 = 4
-    >>>fibonacci_sum_last_digit(3)
-    >>>4
+    >>> fibonacci_sum_last_digit(3)
+    4
 
     Example 2: Sum = 927,372,692,193,078,999,175
-    >>>fibonacci_sum_last_digit(100)
-    >>>5
+    >>> fibonacci_sum_last_digit(100)
+    5
     """
     digit = n % 60  # the Pisano period for the fibonacci sum is 60
 

@@ -14,8 +14,8 @@ def fibonacci_partial_sum(m: int, n: int):
     :return: the last digit of the partial sum
 
     Example: F3 + F4 + F5 + F7 = 2 + 3 + 5 + 8 + 13 = 31
-    >>>fibonacci_partial_sum(3, 7)
-    >>>1
+    >>> fibonacci_partial_sum(3, 7)
+    1
     """
     pisano_period = 60
     partial_sum = [0, 1]
