@@ -185,7 +185,14 @@ _(1 ≤ 𝑛 ≤ 10E5, 1 ≤ 𝑎𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.
 **Output:** Integer of the inversions in the sequence.  
 [Solution](inversions.py "inversions.py")
 
-### Organizing A Loterry
+### Organizing A Lottery
+Given a set of points on a line and a set of segments on a line. The goal is to compute, for each point, the number of 
+segments that contain this point.  
+**Input:** The first line contains two non-negative integers 𝑠 and 𝑝 defining the number of segments and the number of 
+points on a line, respectively. The next 𝑠 lines contain two integers 𝑎𝑖,𝑏𝑖 defining the 𝑖-th segment (𝑎𝑖, 𝑏𝑖). The next 
+line contains 𝑝 integers defining points 𝑥1,𝑥2,...,𝑥𝑝 _(1 ≤ 𝑠,𝑝 ≤ 50000;−10E8 ≤ 𝑎𝑖 ≤ 𝑏𝑖 ≤ 10E8 for all 0 ≤ 𝑖 < 𝑠; 
+−10E8 ≤ 𝑥𝑗 ≤ 10E8 for all 0 ≤ 𝑗 < 𝑝)_.  
+**Output:** 𝑝 non-negative integers 𝑘0,𝑘1,...,𝑘𝑝−1 where 𝑘𝑖 is the number of segments which contain 𝑥𝑖.  
 [Solution](points_and_segments.py "points_and_segments.py")
 
 ### Closest Points
