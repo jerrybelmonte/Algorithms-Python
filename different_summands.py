@@ -1,5 +1,23 @@
-# Uses python3
-def optimal_summands(n):
+# Maximum Number of Prizes (Different Summands)
+# Author: jerrybelmonte
+# Input: Single integer n.
+# Output: First line is the maximum number k of integers.
+# Followed by the distinct integers that sum up to n.
+
+
+def optimal_summands(n: int):
+    """
+    Gets the maximum number of distinct prizes.
+
+    >>> optimal_summands(6)
+    [1, 2, 3]
+
+    >>> optimal_summands(8)
+    [1, 2, 5]
+
+    >>> optimal_summands(2)
+    [2]
+    """
     if n <= 2:
         return [n]
 
@@ -15,16 +33,14 @@ def optimal_summands(n):
             summands.append(num)
             break
         else:
-            diff = n - (opt_sum - num)
-            summands[-1] += diff
+            summands[-1] += n - (opt_sum - num)
             break
 
     return summands
 
 
 if __name__ == '__main__':
-    n_ = int(input())
-    res = optimal_summands(n_)
+    res = optimal_summands(int(input()))
     print(len(res))
     for x in res:
         print(x, end=' ')
