@@ -25,6 +25,7 @@ Programming challenges and algorithm implementations in Python 3.
   - [Binary Search](#binary-search)
   - [Majority Element](#majority-element)
   - [3 Way Partition Quicksort](#3-way-partition-quicksort)
+  - [Number Of Inversions](#number-of-inversions)
 * [Dynamic Programming](#dynamic-programming)
 
 ## Objective
@@ -178,6 +179,10 @@ _(1 ≤ 𝑛 ≤ 10E5; 1 ≤ 𝑎𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.
 [Solution](sorting.py "sorting.py")
 
 ### Number Of Inversions
+Count the number of inversions of a given sequence.  
+**Input:** The first line contains an integer 𝑛, the next one contains a sequence of integers 𝑎0,𝑎1,...,𝑎𝑛−1 
+_(1 ≤ 𝑛 ≤ 10E5, 1 ≤ 𝑎𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.  
+**Output:** Integer of the inversions in the sequence.  
 [Solution](inversions.py "inversions.py")
 
 ### Organizing A Loterry

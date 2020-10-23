@@ -1,47 +1,67 @@
-# Uses python3
+# Number of Inversions
+# Author: jerrybelmonte
 import sys
 
 
-def get_number_of_inversions(a, b, left, right):
-    number_of_inversions = 0
+def get_number_of_inversions(seq: list, arr: list, left: int, right: int):
+    """
+    Counts the number of inversions of a given sequence.
+
+    :param seq: sequence of numbers
+    :param arr: array filled with zeros
+    :param left: starting index
+    :param right: ending index
+    :return: number of inversions
+
+    Example: there are two inversions: (a1, a3) 3 > 2, and (a2, a3) 9 > 2
+    >>> get_number_of_inversions([2, 3, 9, 2, 9], [0, 0, 0, 0, 0], 0, 5)
+    2
+    """
+    num_inversions = 0
+
     if right - left <= 1:
-        return number_of_inversions
-    ave = (left + right) // 2
-    number_of_inversions += get_number_of_inversions(a, b, left, ave)
-    number_of_inversions += get_number_of_inversions(a, b, ave, right)
-    # write your code here
-    number_of_inversions += merge(a, b, left, ave, right)
-    return number_of_inversions
+        return num_inversions
+
+    mid = (left + right)//2
+    num_inversions += get_number_of_inversions(seq, arr, left, mid)
+    num_inversions += get_number_of_inversions(seq, arr, mid, right)
+    num_inversions += merge(seq, arr, left, mid, right)
+
+    return num_inversions
 
 
-def merge(a, b, lo, mid, hi):
-    # Merge a[lo..mid] with a[mid+1..hi]
-    i, j = lo, mid + 1
+def merge(seq, arr, left, mid, right):
+    i, k, j = left, left, mid
     inversion_count = 0
-    # Merge back to a[lo..hi]
-    for k in range(lo, hi):
-        if a[i] > a[mid]:
-            b[j] = a[k]
-            j += 1
-            inversion_count += 1
-        elif j > hi:
-            b[i] = a[k]
+
+    while i < mid and j < right:
+        if seq[i] <= seq[j]:  # non-decreasing
+            arr[k] = seq[i]
+            k += 1
             i += 1
-            inversion_count += 1
-        elif a[j] < a[i]:
-            b[j] = a[k]
+        else:  # inversion detected
+            arr[k] = seq[j]
             j += 1
-            inversion_count += 1
-        else:
-            b[i] = a[k]
-            i += 1
+            k += 1
+            inversion_count += mid - i
+
+    while i < mid:
+        arr[k] = seq[i]
+        i += 1
+        k += 1
+
+    while j < right:
+        arr[k] = seq[j]
+        j += 1
+        k += 1
+
+    for ndx in range(left, right):
+        seq[ndx] = arr[ndx]
+
     return inversion_count
 
 
 if __name__ == '__main__':
-    # input = sys.stdin.read()
-    # n_, *a_ = list(map(int, input.split()))
-    n_ = 5
-    a_ = [2, 3, 9, 2, 9]
-    b_ = n_ * [0]
-    print(get_number_of_inversions(a_, b_, 0, len(a_)))
+    n, *a = list(map(int, sys.stdin.read().split()))
+    b = n * [0]
+    print(get_number_of_inversions(a, b, 0, n))
