@@ -14,6 +14,12 @@ Programming challenges and algorithm implementations in Python 3.
   - [Fibonacci Partial Sum Last Digit](#fibonacci-partial-sum-last-digit)
   - [Fibonacci Sum Of Squares Last Digit](#fibonacci-sum-of-squares-last-digit)
 * [Greedy Algorithms](#greedy-algorithms)
+  - [Money Change](#money-change)
+  - [Fractional Knapsack](#fractinal-knapsack)
+  - [Car Fueling](#car-fueling)
+  - [Maximum Dot Product](#maximum-dot-product)
+  - [Covering Segments By Points](#covering-segments-by-points)
+  - [Maximum Number Of Prizes](#maximum-number-of-prizes)
 * [Divide and Conquer](#divide-and-conquer)
 * [Dynamic Programming](#dynamic-programming)
 
@@ -78,6 +84,43 @@ Compute the last digit of 𝐹0^2 + 𝐹1^2 +···+ 𝐹𝑛^2.
 
 
 ## Greedy Algorithms
+
+### Money Change
+Goal is to find the minimum number of coins needed to change the input value into coins with denominations 1, 5, and 10.  
+**Input:** Single integer 𝑚 _(1 ≤ 𝑚 ≤ 10E3)_.  
+**Output:** The minimum number of coins with denominations 1, 5, 10 that changes 𝑚.  
+[Solution](change.py "change.py")
+
+### Fractional Knapsack
+Implement an algorithm for the fractional knapsack problem.  
+**Input:** First line contains the number 𝑛 of items and the capacity W of a knapsack. Following 𝑛 lines define the values and the weights of the items. The i-th line contains integers 𝑣𝑖 and 𝑤𝑖, the value and weight of the i-th item, respectively _(1 ≤ 𝑛 ≤ 10E3, 0 ≤ 𝑊 ≤ 2·10E6; 0 ≤ 𝑣𝑖 ≤ 2·10E6, 0 < 𝑤𝑖 ≤2·10E6 for all 1 ≤ 𝑖 ≤ 𝑛)_.  
+**Output:** The maximal value of fractions of items that fit into the knapsack. The output has to have at least four digits after the decimal point.  
+[Solution](fractional_knapsack.py "fractional_knapsack.py")
+
+### Car Fueling
+What is the minimum number of refills needed to travel to another city located 𝑑 miles away. The car starts with a full tank and can travel 𝑚 miles on a full tank. Along the journey there are gas stations at distances stop1, stop2,..., stop𝑛.  
+**Input:** Firt line contains an integer 𝑑. Second line contains an integer 𝑚. The third line specifies an integer 𝑛. The last line contains integers stop1, stop2,..., stop𝑛 _(1 ≤ 𝑑 ≤ 10E5; 1 ≤ 𝑚 ≤ 400; 1 ≤ 𝑛 ≤ 300; 0 < stop1 < stop2 <···< stop𝑛 < 𝑑)_.  
+**Output:** The minimum number of refills needed, assuming the car starts with a full tank. If it is not possible to reach the destination, output -1.  
+[Solution](car_fueling.py "car_fueling.py")
+
+### Maximum Dot Product
+Given two sequences 𝑎1,𝑎2,...,𝑎𝑛 (𝑎𝑖 is the profit per click of the 𝑖-th ad) and 𝑏1,𝑏2,...,𝑏𝑛 (𝑏𝑖 is the average number of clicks per day of the 𝑖-th slot), we need to partition them into 𝑛 pairs (𝑎𝑖,𝑏𝑗) such that the sum of their products is maximized.  
+**Input:** The first line contains an integer 𝑛, the second one contains a sequence of integers 𝑎1,𝑎2,...,𝑎𝑛, the third one contains a sequence of integers 𝑏1,𝑏2,...,𝑏𝑛 _(1 ≤ 𝑛 ≤ 10E3; −10E5 ≤ 𝑎𝑖,𝑏𝑖 ≤ 10E5 for all 1 ≤ 𝑖 ≤ 𝑛)_.  
+**Output:** The maximum value of ∑︀ 𝑎𝑖𝑐𝑖, where 𝑐1,𝑐2,...,𝑐𝑛 is a permutation of 𝑏1,𝑏2,...,𝑏𝑛.  
+[Solution](dot_product.py "dot_product.py")
+
+### Covering Segments By Points
+Given a set of 𝑛 segments {(𝑎0,𝑏0),(𝑎1,𝑏1),...,(𝑎𝑛−1,𝑏𝑛−1)} with integer coordinates on a line, find the minimum number 𝑚 of points such that each segment contains at least one point. That is, find a set of integers 𝑋 of the minimum size such that for any segment (𝑎𝑖,𝑏𝑖) there is a point 𝑥 ∈ 𝑋 such that 𝑎𝑖 ≤ 𝑥 ≤ 𝑏𝑖.  
+**Input:** The first line of the input contains the number 𝑛 of segments. Each of the following 𝑛 lines contains two integers 𝑎𝑖 and 𝑏𝑖 (separated by a space) defining the coordinates of endpoints of the 𝑖-th segment _(1 ≤ 𝑛 ≤ 100; 0 ≤ 𝑎𝑖 ≤ 𝑏𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.  
+**Output:** The minimum number 𝑚 of points on the first line and the integer coordinates of 𝑚 points (separated by spaces) on the second line.  
+[Solution](covering_segments.py "covering_segments.py")
+
+### Maximum Number Of Prizes
+The goal of this problem is to represent a given positive integer 𝑛 as a sum of as many pairwise distinct positive integers as possible. That is, to find the maximum 𝑘 such that 𝑛 can be written as 𝑎1+𝑎2+···+𝑎𝑘 where 𝑎1,...,𝑎𝑘 are positive integers and 𝑎𝑖 != 𝑎𝑗 for all 1 ≤ 𝑖 < 𝑗 ≤ 𝑘.  
+**Input:** A single integer n _(1 ≤ 𝑛 ≤ 10E9)_.  
+**Output:** In the first line, output the maximum number 𝑘 such that 𝑛 can be represented as a sum of 𝑘 pairwise distinct positive integers. In the second line, output 𝑘 pairwise distinct positive integers that sum up to 𝑛 (if they exist).  
+[Solution](different_summands.py "different_summands.py")
+
 
 ## Divide and Conquer
 
