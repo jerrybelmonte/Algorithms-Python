@@ -23,6 +23,8 @@ Programming challenges and algorithm implementations in Python 3.
   - [Maximum Salary](#maximum-salary)
 * [Divide and Conquer](#divide-and-conquer)
   - [Binary Search](#binary-search)
+  - [Majority Element](#majority-element)
+  - [3 Way Partition Quicksort](#3-way-partition-quicksort)
 * [Dynamic Programming](#dynamic-programming)
 
 ## Objective
@@ -167,7 +169,12 @@ _(1 ≤ 𝑛 ≤ 10E5; 0 ≤ 𝑎𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.
 **Output:** 1 if the sequence contains an element that appears strictly more than 𝑛/2 times, and 0 otherwise.  
 [Solution](majority_element.py "majority_element.py")
 
-### Improving Quick Sort
+### 3 Way Partition Quicksort
+Implement the quicksort algorithm to efficiently process a sequences with few unique elements, by implementing a 3-way 
+partition of the array into three parts: < 𝑥 part, = 𝑥 part, and > 𝑥 part.  
+**Input:** The first line of the input contains an integer 𝑛. The next line contains a sequence of 𝑛 integers 𝑎0,𝑎1,...,𝑎𝑛−1 
+_(1 ≤ 𝑛 ≤ 10E5; 1 ≤ 𝑎𝑖 ≤ 10E9 for all 0 ≤ 𝑖 < 𝑛)_.  
+**Output:** The sorted sequence in non-decreasing order.  
 [Solution](sorting.py "sorting.py")
 
 ### Number Of Inversions

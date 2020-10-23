@@ -1,48 +1,55 @@
-# Uses python3
+# Randomized Quicksort with 3-way Partition
+# Author: jerrybelmonte
 import sys
-import random
+from random import randint
 
 
-def partition3(a, lo, hi):
+def partition3(seq, lo, hi):
     left, right = lo, hi
-    i = lo + 1
-    x_val = a[lo]
-    while i <= right:
-        if a[i] < x_val:
-            a[left], a[i] = a[i], a[left]
-            left, i = left + 1, i + 1
-        elif a[i] > x_val:
-            a[i], a[right] = a[right], a[i]
+    ndx = lo + 1
+    pivot = seq[lo]
+
+    while ndx <= right:
+        if seq[ndx] < pivot:
+            seq[left], seq[ndx] = seq[ndx], seq[left]
+            left, ndx = left + 1, ndx + 1
+        elif seq[ndx] > pivot:
+            seq[ndx], seq[right] = seq[right], seq[ndx]
             right -= 1
         else:
-            i += 1
+            ndx += 1
+
     return left, right
 
 
-def partition2(a, l, r):
-    x = a[l]
-    j = l
-    for i in range(l + 1, r + 1):
-        if a[i] <= x:
-            j += 1
-            a[i], a[j] = a[j], a[i]
-    a[l], a[j] = a[j], a[l]
-    return j
-
-
-def randomized_quick_sort(a, l, r):
-    if l >= r:
+def randomized_quick_sort(seq, left, right):
+    if left >= right:  # base case
         return
-    k = random.randint(l, r)
-    a[l], a[k] = a[k], a[l]
-    m1, m2 = partition3(a, l, r)
-    randomized_quick_sort(a, l, m1 - 1)
-    randomized_quick_sort(a, m2 + 1, r)
+
+    rand_ndx = randint(left, right)  # random selection
+    seq[left], seq[rand_ndx] = seq[rand_ndx], seq[left]
+
+    mid_left, mid_right = partition3(seq, left, right)
+    randomized_quick_sort(seq, left, mid_left - 1)
+    randomized_quick_sort(seq, mid_right + 1, right)
+
+
+def quick_sort(seq: list):
+    """
+    Randomized quicksort with 3-way partition implementation.
+
+    :param seq: sequence of numbers
+    :return: sorted sequence in non-decreasing order
+
+    >>> quick_sort([2, 3, 9, 2, 2])
+    [2, 2, 2, 3, 9]
+    """
+    randomized_quick_sort(seq, 0, len(seq) - 1)
+    return seq
 
 
 if __name__ == '__main__':
-    input_ = sys.stdin.read()
-    n, *a_ = list(map(int, input_.split()))
-    randomized_quick_sort(a_, 0, n - 1)
-    for x in a_:
+    n, *a = list(map(int, sys.stdin.read().split()))
+    randomized_quick_sort(a, 0, n - 1)
+    for x in a:
         print(x, end=' ')
