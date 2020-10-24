@@ -28,7 +28,7 @@ Programming challenges and algorithm implementations in Python 3.
   - [Number Of Inversions](#number-of-inversions)
   - [Organizing A Loterry](#organizing-a-lottery)
   - [Closest Points](#closest-points)
-* [Dynamic Programming](#dynamic-programming)
+* [Technologies](#technologies)
 
 ## Objective
 Practice implementing various algorithms in Python and gain experience designing algorithms.
@@ -204,7 +204,6 @@ _(2 ≤ 𝑛 ≤ 10E5 ; −10E9 ≤ 𝑥𝑖,𝑦𝑖 ≤ 10E9 are integers)_.
 **Output:** The minimum distance.  
 [Solution](closest.py "closest.py")
 
-## Dynamic Programming
 
 ## Technologies
 Python 3.8
