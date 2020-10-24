@@ -26,6 +26,8 @@ Programming challenges and algorithm implementations in Python 3.
   - [Majority Element](#majority-element)
   - [3 Way Partition Quicksort](#3-way-partition-quicksort)
   - [Number Of Inversions](#number-of-inversions)
+  - [Organizing A Loterry](#organizing-a-lottery)
+  - [Closest Points](#closest-points)
 * [Dynamic Programming](#dynamic-programming)
 
 ## Objective
@@ -196,6 +198,10 @@ line contains 𝑝 integers defining points 𝑥1,𝑥2,...,𝑥𝑝 _(1 ≤ �
 [Solution](points_and_segments.py "points_and_segments.py")
 
 ### Closest Points
+Given 𝑛 points on a plane, find the smallest distance between a pair of two (different) points.  
+**Input:** The first line contains the number 𝑛 of points. Each of the following 𝑛 lines defines a point (𝑥𝑖, 𝑦𝑖) 
+_(2 ≤ 𝑛 ≤ 10E5 ; −10E9 ≤ 𝑥𝑖,𝑦𝑖 ≤ 10E9 are integers)_.  
+**Output:** The minimum distance.  
 [Solution](closest.py "closest.py")
 
 ## Dynamic Programming
