@@ -29,6 +29,7 @@ Programming challenges and algorithm implementations in Python 3.
   - [Organizing A Loterry](#organizing-a-lottery)
   - [Closest Points](#closest-points)
 * [Technologies](#technologies)
+* [License](#license)
 
 ## Objective
 Practice implementing various algorithms in Python and gain experience designing algorithms.
@@ -207,3 +208,6 @@ _(2 ≤ 𝑛 ≤ 10E5 ; −10E9 ≤ 𝑥𝑖,𝑦𝑖 ≤ 10E9 are integers)_.
 
 ## Technologies
 Python 3.8
+
+## License
+This project is licensed under the terms of the **MIT** license. See the [LICENSE](LICENSE) file for details.
